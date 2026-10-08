@@ -141,7 +141,7 @@ The fully computed databases are available for direct download:
 
 | Dataset | `.rda` DOI | Parquet DOI |
 |---------|-----------|-------------|
-| Curated general databases | [10.5281/zenodo.15667485](https://doi.org/10.5281/zenodo.15667485) | [10.5281/zenodo.23192462](https://doi.org/10.5281/zenodo.23192462) |
+| Curated general databases | [10.5281/zenodo.15667485](https://doi.org/10.5281/zenodo.23237047) | [10.5281/zenodo.23192462](https://doi.org/10.5281/zenodo.23237198) |
 | Cell-type-specific — organs & tissues (Part 1) | [10.5281/zenodo.17192067](https://doi.org/10.5281/zenodo.17192067) | [10.5281/zenodo.23191430](https://doi.org/10.5281/zenodo.23191430) |
 | Cell-type-specific — organs & tissues (Part 2) | [10.5281/zenodo.17192175](https://doi.org/10.5281/zenodo.17192175) | [10.5281/zenodo.23191960](https://doi.org/10.5281/zenodo.23191960) |
 | Cell-type-specific — stem, progenitor & iPS cells | [10.5281/zenodo.17191689](https://doi.org/10.5281/zenodo.17191689) | [10.5281/zenodo.23192059](https://doi.org/10.5281/zenodo.23192059) |
