@@ -20,7 +20,7 @@ cell-type-specific database variants are produced.
 ## Repository structure
 
 ```
-tf-target-db/
+tf-gene-db-builder/
 ├── R/
 │   ├── 00_session_info.R           # Record package versions for reproducibility
 │   ├── 01_build_remap.R            # Load ReMap2022 files → named GRanges list
