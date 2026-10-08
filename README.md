@@ -42,7 +42,9 @@ tf-target-db/
 │   └── re2g_cell_type/             # Per-biosample cell-type-specific databases
 └── README.md
 ```
+
 Only scripts are tracked by git.
+
 ---
 
 ## Data download and setup
