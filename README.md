@@ -27,8 +27,8 @@ tf-target-db/
 │   ├── 02_build_promoters.R        # Define hg38 TSS ±1 kb promoter regions
 │   ├── 03_filter_re2g_by_depth.R    # Filters rE2G ranges by recurrence
 │   ├── 04_build_general_databases.R # General TF–gene databases 
-│   └── 04_build_celltype_databases.R # Cell-type-specific TF–gene databases
-├── data/                           # (not tracked by git – see Data setup below)
+│   └── 05_build_celltype_databases.R # Cell-type-specific TF–gene databases
+├── data/                           # (not tracked by git)
 │   ├── remap_hg38/                 # One .txt file per ReMap2022 experiment
 │   ├── all_encode_re2g.txt         # Merged ENCODE rE2G table (pipe-delimited)
 │   ├── ReMap2022+EnsTSS+GH.Rdata   # GeneHancer object from TFEA.ChIP
