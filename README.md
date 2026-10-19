@@ -12,8 +12,8 @@ pipeline identifies which genes have a ReMap2022 peak overlapping a predicted
 regulatory region (enhancer or promoter), then stores the result as a compact R
 list: element `[[1]]` is a character vector of unique Entrez Gene IDs, and
 element `[[2]]` is a named list where each entry is a ChIP-seq experiment ID
-mapping to integer indices into `[[1]]`. Both general (pan-cell-type) and
-cell-type-specific database variants are produced.
+mapping to integer indices into `[[1]]`. Both general (pan-biosample) and
+biosample-specific database variants are produced.
 
 ---
 
@@ -27,7 +27,7 @@ tf-gene-db-builder/
 │   ├── 02_build_promoters.R        # Define hg38 TSS ±1 kb promoter regions
 │   ├── 03_filter_re2g_by_depth.R    # Filters rE2G ranges by recurrence
 │   ├── 04_build_general_databases.R # General TF–gene databases 
-│   └── 05_build_celltype_databases.R # Cell-type-specific TF–gene databases
+│   └── 05_build_celltype_databases.R # biosample-specific TF–gene databases
 ├── data/                           # (not tracked by git)
 │   ├── remap_hg38/                 # One .txt file per ReMap2022 experiment
 │   ├── all_encode_re2g.txt         # Merged ENCODE rE2G table (pipe-delimited)
@@ -39,7 +39,7 @@ tf-gene-db-builder/
 │   ├── re2g_filtered_200.rds       # ENCODE rE2G recurrence filtered ranges (200)
 │   ├── re2g_filtered_100.rds       # ENCODE rE2G recurrence filtered ranges (100)
 │   ├── re2g_filtered_50.rds        # ENCODE rE2G recurrence filtered ranges (50)
-│   └── re2g_cell_type/             # Per-biosample cell-type-specific databases
+│   └── re2g_cell_type/             # Per-biosample biosample-specific databases
 └── README.md
 ```
 
@@ -104,7 +104,7 @@ BiocManager::install(c(
 
 ## Outputs
 
-### General (pan-cell-type) databases — `out_rdata/`
+### General (pan-biosample) databases — `out_rdata/`
 
 | File | Regulatory regions |
 |------|--------------------|
@@ -130,7 +130,7 @@ gene_universe <- ChIPDB[[1]]   # character vector of Entrez Gene IDs
 chip_index    <- ChIPDB[[2]]   # named list: experiment ID -> integer indices
 ```
 
-### Cell-type-specific databases — `out_rdata/re2g_cell_type/`
+### Biosample-specific databases — `out_rdata/re2g_cell_type/`
 
 One pair of `.rda` / `.rds` files per ENCODE biosample, named
 `<cell_type>_<ENCFF_ID>_object_hg38.{rda,rds}`.
@@ -144,13 +144,13 @@ The fully computed databases are available for direct download:
 | Dataset | `.rda` DOI | Parquet DOI |
 |---------|-----------|-------------|
 | Curated general databases | [10.5281/zenodo.15667485](https://doi.org/10.5281/zenodo.23237047) | [10.5281/zenodo.23192462](https://doi.org/10.5281/zenodo.23237198) |
-| Cell-type-specific — organs & tissues (Part 1) | [10.5281/zenodo.17192067](https://doi.org/10.5281/zenodo.17192067) | [10.5281/zenodo.23191430](https://doi.org/10.5281/zenodo.23191430) |
-| Cell-type-specific — organs & tissues (Part 2) | [10.5281/zenodo.17192175](https://doi.org/10.5281/zenodo.17192175) | [10.5281/zenodo.23191960](https://doi.org/10.5281/zenodo.23191960) |
-| Cell-type-specific — stem, progenitor & iPS cells | [10.5281/zenodo.17191689](https://doi.org/10.5281/zenodo.17191689) | [10.5281/zenodo.23192059](https://doi.org/10.5281/zenodo.23192059) |
-| Cell-type-specific — cancer & immortalized cell lines | [10.5281/zenodo.17177454](https://doi.org/10.5281/zenodo.17177454) | [10.5281/zenodo.23192306](https://doi.org/10.5281/zenodo.23192306) |
-| Cell-type-specific — connective, mesenchymal & muscle | [10.5281/zenodo.17191999](https://doi.org/10.5281/zenodo.17191999) | [10.5281/zenodo.23192216](https://doi.org/10.5281/zenodo.23192216) |
-| Cell-type-specific — primary blood & immune cells | [10.5281/zenodo.17191614](https://doi.org/10.5281/zenodo.17191614) | [10.5281/zenodo.23192383](https://doi.org/10.5281/zenodo.23192383) |
-| Cell-type-specific — epithelial & endothelial cells | [10.5281/zenodo.17191957](https://doi.org/10.5281/zenodo.17191957) | [10.5281/zenodo.23192127](https://doi.org/10.5281/zenodo.23192127) |
+| Biosample-specific — organs & tissues (Part 1) | [10.5281/zenodo.17192067](https://doi.org/10.5281/zenodo.17192067) | [10.5281/zenodo.23191430](https://doi.org/10.5281/zenodo.23191430) |
+| Biosample-specific — organs & tissues (Part 2) | [10.5281/zenodo.17192175](https://doi.org/10.5281/zenodo.17192175) | [10.5281/zenodo.23191960](https://doi.org/10.5281/zenodo.23191960) |
+| Biosample-specific — stem, progenitor & iPS cells | [10.5281/zenodo.17191689](https://doi.org/10.5281/zenodo.17191689) | [10.5281/zenodo.23192059](https://doi.org/10.5281/zenodo.23192059) |
+| Biosample-specific — cancer & immortalized cell lines | [10.5281/zenodo.17177454](https://doi.org/10.5281/zenodo.17177454) | [10.5281/zenodo.23192306](https://doi.org/10.5281/zenodo.23192306) |
+| Biosample-specific — connective, mesenchymal & muscle | [10.5281/zenodo.17191999](https://doi.org/10.5281/zenodo.17191999) | [10.5281/zenodo.23192216](https://doi.org/10.5281/zenodo.23192216) |
+| Biosample-specific — primary blood & immune cells | [10.5281/zenodo.17191614](https://doi.org/10.5281/zenodo.17191614) | [10.5281/zenodo.23192383](https://doi.org/10.5281/zenodo.23192383) |
+| Biosample-specific — epithelial & endothelial cells | [10.5281/zenodo.17191957](https://doi.org/10.5281/zenodo.17191957) | [10.5281/zenodo.23192127](https://doi.org/10.5281/zenodo.23192127) |
 
 ---
 
