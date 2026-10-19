@@ -112,10 +112,10 @@ BiocManager::install(c(
 | `encode_re2g-75_object_hg38.rda`        | rE2G score > 0.75 + promoters |
 | `encode_re2g-5_object_hg38.rda`         | rE2G score > 0.50 + promoters |
 | `encode_re2g-25_object_hg38.rda`        | rE2G score > 0.25 + promoters |
-| `encode_re2g-300depth_object_hg38.rda`  | depth-filtered rE2G (≥300 reads) + promoters |
-| `encode_re2g-200depth_object_hg38.rda`  | depth-filtered rE2G (≥200 reads) + promoters |
-| `encode_re2g-100depth_object_hg38.rda`  | depth-filtered rE2G (≥100 reads) + promoters |
-| `encode_re2g-50depth_object_hg38.rda`   | depth-filtered rE2G (≥50 reads) + promoters |
+| `encode_re2g-300depth_object_hg38.rda`  | depth-filtered rE2G (≥300 biosamples) + promoters |
+| `encode_re2g-200depth_object_hg38.rda`  | depth-filtered rE2G (≥200 biosamples) + promoters |
+| `encode_re2g-100depth_object_hg38.rda`  | depth-filtered rE2G (≥100 biosamples) + promoters |
+| `encode_re2g-50depth_object_hg38.rda`   | depth-filtered rE2G (≥50 biosamples) + promoters |
 | `credb_object_hg38.rda`                 | CREdb + promoters |
 | `genehancer_object.rda`                 | GeneHancer + promoters |
 
